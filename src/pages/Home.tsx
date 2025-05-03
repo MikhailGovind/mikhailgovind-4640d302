@@ -132,7 +132,8 @@ With expertise in Unity and C#, I build immersive games and interactive systems 
               <ul className="space-y-2">
                 <li className="flex items-center">
                   <span className="mr-2 text-secondary">•</span>
-                  <span>Game Mechanics</span>
+                  <span>Game Mechanics & Systems
+                </span>
                 </li>
                 <li className="flex items-center">
                   <span className="mr-2 text-secondary">•</span>

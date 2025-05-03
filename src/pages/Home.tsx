@@ -160,7 +160,7 @@ With expertise in Unity and C#, I build immersive games and interactive systems 
                 </li>
                 <li className="flex items-center">
                   <span className="mr-2 text-secondary">•</span>
-                  <span>Digital Art</span>
+                  <span>2D Digital Art</span>
                 </li>
                 <li className="flex items-center">
                   <span className="mr-2 text-secondary">•</span>

@@ -10,6 +10,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
+import { Link } from "react-router-dom";
 
 interface ExpandableSkill {
   title: string;
@@ -17,7 +18,10 @@ interface ExpandableSkill {
   blurb: string;
   overview: string;
   useCases: string[];
-  projects: string[];
+  projects: {
+    name: string;
+    slug: string;
+  }[];
   skills: string[];
 }
 
@@ -49,7 +53,11 @@ const Skills = () => {
         "Procedurally generated content",
         "Systems design and implementation"
       ],
-      projects: ["The DJs of Shaolin", "Itsy Bitsy Spider", "Playing Game"],
+      projects: [
+        { name: "The DJs of Shaolin", slug: "djs-of-shaolin" }, 
+        { name: "Itsy Bitsy Spider", slug: "itsy-bitsy-spider" }, 
+        { name: "Playing Game", slug: "playing-game" }
+      ],
       skills: [
         "Unity Game Engine",
         "C# Programming",
@@ -70,7 +78,11 @@ const Skills = () => {
         "Player progression systems",
         "Game mechanics balancing"
       ],
-      projects: ["The DJs of Shaolin", "Playing Game", "S.O.D.A"],
+      projects: [
+        { name: "The DJs of Shaolin", slug: "djs-of-shaolin" }, 
+        { name: "Playing Game", slug: "playing-game" }, 
+        { name: "S.O.D.A", slug: "soda" }
+      ],
       skills: [
         "Level Design",
         "Game Design Documentation",
@@ -91,7 +103,11 @@ const Skills = () => {
         "World building",
         "Visual asset creation"
       ],
-      projects: ["Playing Game", "The DJs of Shaolin", "Space Escape"],
+      projects: [
+        { name: "Playing Game", slug: "playing-game" }, 
+        { name: "The DJs of Shaolin", slug: "djs-of-shaolin" }, 
+        { name: "Space Escape", slug: "space-escape" }
+      ],
       skills: [
         "Creative Writing",
         "Interactive Storytelling",
@@ -112,7 +128,11 @@ const Skills = () => {
         "Game engine integration",
         "Interactive narrative tools"
       ],
-      projects: ["All Projects", "FNAF Clone", "S.O.D.A"],
+      projects: [
+        { name: "All Projects", slug: "projects" }, 
+        { name: "FNAF Clone", slug: "fnaf-clone" }, 
+        { name: "S.O.D.A", slug: "soda" }
+      ],
       skills: [
         "Visual Studio Code",
         "GitHub",
@@ -133,7 +153,11 @@ const Skills = () => {
         "Algorithm development",
         "Technical problem solving"
       ],
-      projects: ["Itsy Bitsy Spider", "FNAF Clone", "S.O.D.A"],
+      projects: [
+        { name: "Itsy Bitsy Spider", slug: "itsy-bitsy-spider" }, 
+        { name: "FNAF Clone", slug: "fnaf-clone" }, 
+        { name: "S.O.D.A", slug: "soda" }
+      ],
       skills: ["C# Programming", "Object-Oriented Design", "Unity API", "Version Control (Git)", "Data Structures", "Algorithm Implementation"]
     },
     {
@@ -147,7 +171,11 @@ const Skills = () => {
         "Technical constraints resolution",
         "Design problem iteration"
       ],
-      projects: ["Itsy Bitsy Spider", "The DJs of Shaolin", "S.O.D.A"],
+      projects: [
+        { name: "Itsy Bitsy Spider", slug: "itsy-bitsy-spider" }, 
+        { name: "The DJs of Shaolin", slug: "djs-of-shaolin" }, 
+        { name: "S.O.D.A", slug: "soda" }
+      ],
       skills: [
         "Debugging & Troubleshooting",
         "Algorithmic Thinking",
@@ -173,7 +201,7 @@ const Skills = () => {
               key={skill.title} 
               open={openSkills[skill.title]} 
               onOpenChange={() => toggleSkill(skill.title)}
-              className="bg-card dark:bg-card rounded-lg border border-border shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg"
+              className="bg-card dark:bg-card rounded-lg border border-border shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg h-full"
             >
               <CollapsibleTrigger className="w-full text-left p-6 flex items-start justify-between">
                 <div className="flex items-center">
@@ -207,7 +235,14 @@ const Skills = () => {
                     <h4 className="font-semibold text-portfolio-secondary">Related Projects</h4>
                     <ul className="list-disc pl-5 mt-1 space-y-1">
                       {skill.projects.map((project, index) => (
-                        <li key={index}>{project}</li>
+                        <li key={index}>
+                          <Link 
+                            to={`/projects/${project.slug}`} 
+                            className="text-portfolio-accent hover:underline"
+                          >
+                            {project.name}
+                          </Link>
+                        </li>
                       ))}
                     </ul>
                   </div>

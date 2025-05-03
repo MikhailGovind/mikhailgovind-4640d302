@@ -44,7 +44,7 @@ const Header = () => {
           <div className="flex-shrink-0">
             <Link 
               to="/" 
-              className="font-bold text-xl text-primary hover:text-secondary transition-colors duration-300"
+              className="font-bold text-2xl text-primary hover:text-secondary transition-colors duration-300"
             >
               Mikhail Govind
             </Link>

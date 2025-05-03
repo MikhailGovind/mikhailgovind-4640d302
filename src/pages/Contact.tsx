@@ -16,7 +16,7 @@ const Contact = () => {
       <div className="page-container">
         <SectionTitle 
           title="Contact Me" 
-          subtitle="Get in touch for opportunities, collaborations, or just to say hello" 
+          subtitle="Get in touch for opportunities and collaborations" 
         />
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12">

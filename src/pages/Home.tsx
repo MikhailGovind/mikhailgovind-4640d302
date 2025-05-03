@@ -23,9 +23,7 @@ const Home = () => {
               <h2 className="text-2xl text-accent opacity-0 animate-fade-in font-semibold sm:text-4xl">
                 Game Designer & Developer
               </h2>
-              <p className="text-lg sm:text-xl leading-relaxed max-w-2xl opacity-0 animate-fade-in-delay-1">
-                Passionate about creating immersive gaming experiences and interactive systems.
-              </p>
+              <p className="text-lg sm:text-xl leading-relaxed max-w-2xl opacity-0 animate-fade-in-delay-1">Passionate about creating immersive experiences and interactive systems.</p>
               <div className="flex flex-wrap gap-4 opacity-0 animate-fade-in-delay-2">
                 <Link to="/projects" className="inline-flex items-center px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary/90 transition-all shadow-lg hover:shadow-primary/30">
                   View My Projects
@@ -41,7 +39,7 @@ const Home = () => {
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-primary via-accent to-secondary rounded-3xl blur opacity-30 animate-pulse-slow"></div>
                 <div className="relative bg-card rounded-2xl p-6 shadow-xl">
                   {/* Mock game image with animations */}
-                  <img src="https://via.placeholder.com/600x400?text=Game+Screenshot" alt="Game Screenshot" className="w-full h-auto rounded-lg shadow-md animate-float mb-4" />
+                  <img alt="Game Screenshot" className="w-full h-auto rounded-lg shadow-md animate-float mb-4" src="" />
                   <div className="flex justify-center">
                     <div className="flex space-x-2">
                       <div className="w-3 h-3 rounded-full bg-portfolio-accent animate-pulse-slow"></div>

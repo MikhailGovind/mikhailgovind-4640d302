@@ -34,7 +34,7 @@ const ProjectDetail = () => {
         </div>
         
         {/* Hero Section */}
-        <div className="bg-white rounded-lg shadow-md overflow-hidden border border-border">
+        <div className="bg-card dark:bg-card rounded-lg shadow-md overflow-hidden border border-border">
           <div className="aspect-video relative">
             <img 
               src={project.image} 
@@ -47,7 +47,7 @@ const ProjectDetail = () => {
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
               <div>
                 <h1 className="text-3xl md:text-4xl font-bold text-portfolio-primary">{project.title}</h1>
-                <p className="text-portfolio-secondary mt-1">{project.role} | {project.date}</p>
+                <p className="text-portfolio-secondary mt-1">{project.fullRoles || project.role} | {project.date}</p>
               </div>
               
               {project.github && (

@@ -47,13 +47,13 @@
   }
 
   .dark {
-    --background: 222 47% 11%;
+    --background: 220 10% 10%; /* Dark grey instead of dark blue */
     --foreground: 210 40% 98%;
 
-    --card: 222 40% 15%;
+    --card: 220 10% 15%; /* Dark grey card background */
     --card-foreground: 210 40% 98%;
 
-    --popover: 222 40% 15%;
+    --popover: 220 10% 15%;
     --popover-foreground: 210 40% 98%;
 
     --primary: 222 89% 55%;
@@ -62,7 +62,7 @@
     --secondary: 250 89% 65%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 217 33% 20%;
+    --muted: 217 10% 25%; /* Adjusted for better contrast */
     --muted-foreground: 215 16% 70%;
 
     --accent: 349 89% 65%;
@@ -71,8 +71,8 @@
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217 33% 25%;
-    --input: 217 33% 25%;
+    --border: 217 10% 25%; /* Adjusted for better contrast */
+    --input: 217 10% 25%;
     --ring: 222 89% 55%;
 
     --portfolio-primary: 222 89% 55%;
@@ -136,7 +136,7 @@
   }
   
   .glass-card {
-    @apply backdrop-blur-md bg-white/30 dark:bg-slate-900/50 border border-white/20 
+    @apply backdrop-blur-md bg-white/30 dark:bg-slate-800/50 border border-white/20 
            dark:border-slate-700/50 rounded-xl shadow-lg;
   }
   

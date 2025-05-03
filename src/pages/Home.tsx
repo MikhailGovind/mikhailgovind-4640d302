@@ -6,7 +6,6 @@ import { projects } from "@/data/projects";
 import MainLayout from "@/components/layout/MainLayout";
 import SectionTitle from "@/components/ui/SectionTitle";
 import ProjectCard from "@/components/ui/ProjectCard";
-import SkillCard from "@/components/ui/SkillCard";
 import ContactForm from "@/components/ui/ContactForm";
 
 const Home = () => {
@@ -51,17 +50,17 @@ const Home = () => {
               <div className="relative">
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-primary via-accent to-secondary rounded-3xl blur opacity-30 animate-pulse-slow"></div>
                 <div className="relative bg-card rounded-2xl p-6 shadow-xl">
-                  <div className="animate-float">
-                    <div className="grid grid-cols-3 gap-6">
-                      <div className="aspect-square rounded-lg bg-gradient-to-br from-primary to-secondary"></div>
-                      <div className="aspect-square rounded-lg bg-gradient-to-br from-secondary to-accent"></div>
-                      <div className="aspect-square rounded-lg bg-gradient-to-br from-accent to-highlight"></div>
-                      <div className="aspect-square rounded-lg bg-gradient-to-br from-accent to-primary"></div>
-                      <div className="aspect-square rounded-lg bg-gradient-to-br from-highlight to-secondary"></div>
-                      <div className="aspect-square rounded-lg bg-gradient-to-br from-secondary to-primary"></div>
-                      <div className="aspect-square rounded-lg bg-gradient-to-br from-primary to-highlight"></div>
-                      <div className="aspect-square rounded-lg bg-gradient-to-br from-highlight to-accent"></div>
-                      <div className="aspect-square rounded-lg bg-gradient-to-br from-secondary to-highlight"></div>
+                  {/* Mock game image with animations */}
+                  <img 
+                    src="https://via.placeholder.com/600x400?text=Game+Screenshot" 
+                    alt="Game Screenshot" 
+                    className="w-full h-auto rounded-lg shadow-md animate-float mb-4" 
+                  />
+                  <div className="flex justify-center">
+                    <div className="flex space-x-2">
+                      <div className="w-3 h-3 rounded-full bg-portfolio-accent animate-pulse-slow"></div>
+                      <div className="w-3 h-3 rounded-full bg-portfolio-secondary animate-pulse-slow delay-100"></div>
+                      <div className="w-3 h-3 rounded-full bg-portfolio-highlight animate-pulse-slow delay-200"></div>
                     </div>
                   </div>
                 </div>
@@ -130,7 +129,7 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
             <div className="glass-card p-6 hover:shadow-lg transition-all">
               <div className="flex items-center mb-4">
-                <div className="feature-icon mr-4">
+                <div className="feature-icon mr-4 animate-spin-slow">
                   <Code size={24} />
                 </div>
                 <h3 className="text-xl font-bold">Development</h3>
@@ -153,7 +152,7 @@ const Home = () => {
             
             <div className="glass-card p-6 hover:shadow-lg transition-all">
               <div className="flex items-center mb-4">
-                <div className="feature-icon mr-4">
+                <div className="feature-icon mr-4 animate-pulse-slow">
                   <Layers size={24} />
                 </div>
                 <h3 className="text-xl font-bold">Design</h3>
@@ -176,7 +175,7 @@ const Home = () => {
             
             <div className="glass-card p-6 hover:shadow-lg transition-all">
               <div className="flex items-center mb-4">
-                <div className="feature-icon mr-4">
+                <div className="feature-icon mr-4 animate-float">
                   <Rocket size={24} />
                 </div>
                 <h3 className="text-xl font-bold">Creative</h3>
@@ -210,7 +209,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Featured Projects */}
+      {/* Featured Projects with Animation */}
       <section className="py-16 md:py-24 bg-muted/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionTitle 
@@ -219,20 +218,27 @@ const Home = () => {
             align="center"
           />
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-            {featuredProjects.map((project) => (
-              <ProjectCard
-                key={project.id}
-                title={project.title}
-                description={project.description}
-                image={project.image}
-                tags={project.tags}
-                github={project.github}
-                slug={project.slug}
-                date={project.date}
-                role={project.role}
-              />
-            ))}
+          <div className="relative">
+            {/* Decorative animated elements */}
+            <div className="absolute -top-10 -left-10 w-20 h-20 bg-gradient-to-r from-portfolio-accent to-portfolio-secondary rounded-full blur-2xl opacity-20 animate-pulse-slow pointer-events-none"></div>
+            <div className="absolute -bottom-10 -right-10 w-16 h-16 bg-gradient-to-r from-portfolio-primary to-portfolio-highlight rounded-full blur-xl opacity-20 animate-float pointer-events-none"></div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+              {featuredProjects.map((project, index) => (
+                <ProjectCard
+                  key={project.id}
+                  title={project.title}
+                  description={project.description}
+                  image={project.image}
+                  tags={project.tags}
+                  github={project.github}
+                  slug={project.slug}
+                  date={project.date}
+                  role={project.role}
+                  className={`opacity-0 animate-fade-in-delay-${index + 1}`}
+                />
+              ))}
+            </div>
           </div>
           
           <div className="mt-12 text-center">
@@ -247,7 +253,7 @@ const Home = () => {
         </div>
       </section>
       
-      {/* Contact Section */}
+      {/* Contact Section with Animation */}
       <section id="contact" className="py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionTitle 
@@ -258,7 +264,7 @@ const Home = () => {
           
           <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="space-y-8">
-              <div className="glass-card p-6">
+              <div className="glass-card p-6 animate-float">
                 <h3 className="text-2xl font-bold mb-6 gradient-text">Ready to collaborate?</h3>
                 <p className="text-muted-foreground mb-6">
                   I'm currently looking for new opportunities in game development, 

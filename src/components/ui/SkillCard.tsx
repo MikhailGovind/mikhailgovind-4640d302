@@ -12,7 +12,7 @@ interface SkillCardProps {
 const SkillCard = ({ title, icon, skills, className }: SkillCardProps) => {
   return (
     <div className={cn(
-      "bg-white rounded-lg border border-border shadow-md p-6 hover:shadow-lg transition-shadow",
+      "bg-card text-card-foreground rounded-lg border border-border shadow-md p-6 hover:shadow-lg transition-shadow",
       className
     )}>
       <div className="flex items-center mb-4 text-portfolio-primary">

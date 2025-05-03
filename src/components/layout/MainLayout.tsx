@@ -11,7 +11,7 @@ interface MainLayoutProps {
 const MainLayout = ({ children }: MainLayoutProps) => {
   return (
     <ThemeProvider defaultTheme="light" storageKey="portfolio-theme">
-      <div className="min-h-screen flex flex-col transition-colors duration-300 dark:bg-slate-900">
+      <div className="min-h-screen flex flex-col bg-background text-foreground transition-colors duration-300">
         <Header />
         <main className="flex-grow">
           {children}

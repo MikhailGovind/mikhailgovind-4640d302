@@ -6,6 +6,7 @@ export interface Project {
   description: string;
   longDescription?: string[];
   role: string;
+  fullRoles?: string;
   date: string;
   image: string;
   tags: string[];
@@ -27,6 +28,7 @@ export const projects: Project[] = [
       "Designed and implemented quest objectives and character interactions to enhance the storytelling aspect."
     ],
     role: "Lead Programmer & Designer",
+    fullRoles: "Lead Developer, Game Designer, Narrative Designer, UI Programmer, Sound Designer",
     date: "November 2024",
     image: "https://via.placeholder.com/600x400?text=DJs+of+Shaolin",
     tags: ["Unity", "C#", "Game Design", "Rhythm Game", "Pixel Art"],
@@ -52,6 +54,7 @@ export const projects: Project[] = [
       "Collaborated with a small multidisciplinary team through the full development cycle."
     ],
     role: "Lead Programmer",
+    fullRoles: "Lead Programmer, Procedural Animation Developer, Level Generation Designer, Quest System Developer",
     date: "September 2024",
     image: "https://via.placeholder.com/600x400?text=Itsy+Bitsy+Spider",
     tags: ["Unity", "C#", "Procedural Generation", "Animation", "3D Game"],
@@ -77,6 +80,7 @@ export const projects: Project[] = [
       "Built with a strong narrative focus, using gameplay mechanics to reinforce storytelling."
     ],
     role: "Lead Programmer",
+    fullRoles: "Lead Programmer, Narrative Designer, Quest System Developer, Game Mechanics Designer, UI Programmer",
     date: "June 2024",
     image: "https://via.placeholder.com/600x400?text=Playing+Game",
     tags: ["Unity", "C#", "Narrative Design", "Game Design", "Metafiction"],
@@ -102,6 +106,7 @@ export const projects: Project[] = [
       "Created a narrative-driven experience that builds upon horror game conventions learned from previous projects."
     ],
     role: "Lead Programmer",
+    fullRoles: "Lead Programmer, Level Designer, Sound Designer, Lighting Designer, UI Developer",
     date: "November 2023",
     image: "https://via.placeholder.com/600x400?text=S.O.D.A",
     tags: ["Unity", "C#", "Horror Game", "Level Design", "Sound Design"],
@@ -127,6 +132,7 @@ export const projects: Project[] = [
       "Implemented tension-building mechanics through resource management and threat awareness."
     ],
     role: "Programmer",
+    fullRoles: "Programmer, Systems Designer, Camera System Developer, AI Behavior Programmer",
     date: "August 2023",
     image: "https://via.placeholder.com/600x400?text=FNAF+Clone",
     tags: ["Unity", "C#", "Game Mechanics", "Event-Driven Design", "Horror Game"],
@@ -152,6 +158,7 @@ export const projects: Project[] = [
       "Focused on creating an engaging player experience with clear progression through challenging puzzles."
     ],
     role: "Creative Lead",
+    fullRoles: "Creative Lead, Puzzle Designer, Level Designer, Programmer, Game Mechanics Designer",
     date: "November 2022",
     image: "https://via.placeholder.com/600x400?text=Space+Escape",
     tags: ["Unity", "C#", "2D Game", "Puzzle Design", "Level Design"],

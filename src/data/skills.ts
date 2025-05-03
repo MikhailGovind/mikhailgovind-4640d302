@@ -1,16 +1,16 @@
 
 export const technicalSkills = [
   {
+    category: "Languages",
+    skills: ["C#", "HTML", "Python"]
+  },
+  {
     category: "Technologies/Frameworks/Software",
-    skills: ["Unity3D", "Clip Studio Paint", "Visual Studio Code", "GitHub", "Twine", "Photoshop"]
+    skills: ["Unity3D", "Clip Studio Paint", "GitHub", "Twine", "Photoshop"]
   },
   {
     category: "Tools",
     skills: ["Visual Studio Code", "GitHub", "Twine", "Photoshop"]
-  },
-  {
-    category: "Languages",
-    skills: ["C#", "HTML/CSS", "JavaScript (Basic)"]
   }
 ];
 

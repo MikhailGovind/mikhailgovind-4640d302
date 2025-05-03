@@ -12,7 +12,7 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4">Mikhail Govind</h3>
             <p className="text-gray-300">
-              Unity Developer specializing in Game Design & Development
+              Creating immersive digital worlds that engage, inspire and challenge.
             </p>
             <div className="flex space-x-4 mt-4">
               <a 
@@ -49,8 +49,13 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-gray-300 hover:text-portfolio-highlight transition-colors">
-                  About
+                <Link to="/experience" className="text-gray-300 hover:text-portfolio-highlight transition-colors">
+                  Experience
+                </Link>
+              </li>
+              <li>
+                <Link to="/skills" className="text-gray-300 hover:text-portfolio-highlight transition-colors">
+                  Skills
                 </Link>
               </li>
               <li>
@@ -87,7 +92,7 @@ const Footer = () => {
             &copy; {currentYear} Mikhail Govind. All rights reserved.
           </p>
           <p className="text-gray-400 text-sm mt-2 sm:mt-0">
-            Unity Developer & Game Designer
+            Game Designer & Developer
           </p>
         </div>
       </div>

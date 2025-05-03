@@ -20,7 +20,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7 space-y-8">
-              <h2 className="text-2xl font-medium text-accent opacity-0 animate-fade-in sm:text-4xl">
+              <h2 className="text-2xl text-accent opacity-0 animate-fade-in font-semibold sm:text-4xl">
                 Game Designer & Developer
               </h2>
               <p className="text-lg sm:text-xl leading-relaxed max-w-2xl opacity-0 animate-fade-in-delay-1">

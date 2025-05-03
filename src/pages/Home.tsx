@@ -39,7 +39,7 @@ const Home = () => {
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-primary via-accent to-secondary rounded-3xl blur opacity-30 animate-pulse-slow"></div>
                 <div className="relative bg-card rounded-2xl p-6 shadow-xl">
                   {/* Mock game image with animations */}
-                  <img alt="Game Screenshot" className="w-full h-auto rounded-lg shadow-md animate-float mb-4" src="" />
+                  <img alt="Game Screenshot" className="w-full h-auto rounded-lg shadow-md animate-float mb-4" src="/lovable-uploads/c48000d5-ef17-44f7-93f7-18669a6dcf1c.jpg" />
                   <div className="flex justify-center">
                     <div className="flex space-x-2">
                       <div className="w-3 h-3 rounded-full bg-portfolio-accent animate-pulse-slow"></div>

@@ -67,9 +67,8 @@ const Home = () => {
                 </div>
                 <h3 className="text-xl font-bold">Background</h3>
               </div>
-              <p className="text-muted-foreground">
-                I'm a Digital Arts graduate from the University of the Witwatersrand, specializing in Game Design & Development and Creative Writing. With expertise in Unity and C#, I build immersive games and interactive systems that engage players across platforms.
-              </p>
+              <p className="text-muted-foreground">Digital Arts Honours graduate from the University of the Witwatersrand, specializing in Game Design & Development and Creative Writing.
+With expertise in Unity and C#, I build immersive games and interactive systems that engage players across platforms.</p>
             </div>
             
             <div className="glass-card p-6 hover:shadow-lg transition-all">

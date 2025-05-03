@@ -1,3 +1,4 @@
+
 import { Github, Linkedin, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -89,9 +90,6 @@ const Footer = () => {
         <div className="border-t border-gray-700 mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
             &copy; {currentYear} Mikhail Govind. All rights reserved.
-          </p>
-          <p className="text-gray-400 text-sm mt-2 sm:mt-0">
-            Game Designer & Developer
           </p>
         </div>
       </div>

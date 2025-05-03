@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { Code, Gamepad2, Laptop, PenTool, Brain } from "lucide-react";
 import MainLayout from "@/components/layout/MainLayout";
@@ -31,14 +30,11 @@ const Skills = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  // Track open state for expandable sections
-  const [openSkills, setOpenSkills] = useState<Record<string, boolean>>({});
+  // Track active skill for expandable sections
+  const [activeSkill, setActiveSkill] = useState<string | null>(null);
 
   const toggleSkill = (skillId: string) => {
-    setOpenSkills((prev) => ({
-      ...prev,
-      [skillId]: !prev[skillId],
-    }));
+    setActiveSkill(prev => prev === skillId ? null : skillId);
   };
 
   const expandableSkills: ExpandableSkill[] = [
@@ -195,13 +191,13 @@ const Skills = () => {
           subtitle="A comprehensive overview of my technical and soft skills in game development" 
         />
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+        <div className="grid grid-cols-1 gap-8 mt-12">
           {expandableSkills.map((skill) => (
             <Collapsible 
               key={skill.title} 
-              open={openSkills[skill.title]} 
+              open={activeSkill === skill.title} 
               onOpenChange={() => toggleSkill(skill.title)}
-              className="bg-card dark:bg-card rounded-lg border border-border shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg h-full"
+              className={`bg-card dark:bg-card rounded-lg border border-border shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg ${activeSkill === skill.title ? 'col-span-full' : ''}`}
             >
               <CollapsibleTrigger className="w-full text-left p-6 flex items-start justify-between">
                 <div className="flex items-center">
@@ -212,7 +208,7 @@ const Skills = () => {
                   </div>
                 </div>
                 <div className="text-portfolio-accent">
-                  {openSkills[skill.title] ? "-" : "+"}
+                  {activeSkill === skill.title ? "-" : "+"}
                 </div>
               </CollapsibleTrigger>
               <CollapsibleContent className="px-6 pb-6 border-t border-border pt-4">

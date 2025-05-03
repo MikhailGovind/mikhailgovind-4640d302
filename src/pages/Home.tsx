@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { ArrowRight, Code, Sparkles, Layers, Rocket, User, Briefcase, Mail } from "lucide-react";
@@ -7,7 +6,6 @@ import MainLayout from "@/components/layout/MainLayout";
 import SectionTitle from "@/components/ui/SectionTitle";
 import ProjectCard from "@/components/ui/ProjectCard";
 import ContactForm from "@/components/ui/ContactForm";
-
 const Home = () => {
   // Scroll to top on page load
   useEffect(() => {
@@ -16,32 +14,24 @@ const Home = () => {
 
   // Featured projects (show only the first 3)
   const featuredProjects = projects.slice(0, 3);
-
-  return (
-    <MainLayout>
+  return <MainLayout>
       {/* Hero Section */}
       <section className="py-20 animated-bg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7 space-y-8">
-              <h2 className="text-2xl sm:text-3xl font-medium text-accent opacity-0 animate-fade-in">
+              <h2 className="text-2xl font-medium text-accent opacity-0 animate-fade-in sm:text-4xl">
                 Game Designer & Developer
               </h2>
               <p className="text-lg sm:text-xl leading-relaxed max-w-2xl opacity-0 animate-fade-in-delay-1">
                 Passionate about creating immersive gaming experiences and interactive systems.
               </p>
               <div className="flex flex-wrap gap-4 opacity-0 animate-fade-in-delay-2">
-                <Link
-                  to="/projects"
-                  className="inline-flex items-center px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary/90 transition-all shadow-lg hover:shadow-primary/30"
-                >
+                <Link to="/projects" className="inline-flex items-center px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary/90 transition-all shadow-lg hover:shadow-primary/30">
                   View My Projects
                   <ArrowRight size={18} className="ml-2" />
                 </Link>
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center px-6 py-3 bg-transparent text-foreground font-medium rounded-lg border-2 border-border hover:border-accent hover:text-accent transition-all"
-                >
+                <Link to="/contact" className="inline-flex items-center px-6 py-3 bg-transparent text-foreground font-medium rounded-lg border-2 border-border hover:border-accent hover:text-accent transition-all">
                   Contact Me
                 </Link>
               </div>
@@ -51,11 +41,7 @@ const Home = () => {
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-primary via-accent to-secondary rounded-3xl blur opacity-30 animate-pulse-slow"></div>
                 <div className="relative bg-card rounded-2xl p-6 shadow-xl">
                   {/* Mock game image with animations */}
-                  <img 
-                    src="https://via.placeholder.com/600x400?text=Game+Screenshot" 
-                    alt="Game Screenshot" 
-                    className="w-full h-auto rounded-lg shadow-md animate-float mb-4" 
-                  />
+                  <img src="https://via.placeholder.com/600x400?text=Game+Screenshot" alt="Game Screenshot" className="w-full h-auto rounded-lg shadow-md animate-float mb-4" />
                   <div className="flex justify-center">
                     <div className="flex space-x-2">
                       <div className="w-3 h-3 rounded-full bg-portfolio-accent animate-pulse-slow"></div>
@@ -73,11 +59,7 @@ const Home = () => {
       {/* About Section */}
       <section id="about" className="py-16 md:py-24 bg-muted/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionTitle 
-            title="About Me" 
-            subtitle="Learn more about my background and philosophy" 
-            align="center"
-          />
+          <SectionTitle title="About Me" subtitle="Learn more about my background and philosophy" align="center" />
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
             <div className="glass-card p-6 hover:shadow-lg transition-all">
@@ -106,10 +88,7 @@ const Home = () => {
           </div>
           
           <div className="mt-12 text-center">
-            <Link
-              to="/experience"
-              className="inline-flex items-center text-accent hover:text-accent/80 font-medium"
-            >
+            <Link to="/experience" className="inline-flex items-center text-accent hover:text-accent/80 font-medium">
               Learn more about my experience
               <ArrowRight size={16} className="ml-1" />
             </Link>
@@ -120,11 +99,7 @@ const Home = () => {
       {/* Skills Highlight Section */}
       <section className="py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionTitle 
-            title="Core Skills" 
-            subtitle="Technical expertise and creative capabilities" 
-            align="center"
-          />
+          <SectionTitle title="Core Skills" subtitle="Technical expertise and creative capabilities" align="center" />
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
             <div className="glass-card p-6 hover:shadow-lg transition-all">
@@ -198,10 +173,7 @@ const Home = () => {
           </div>
           
           <div className="mt-12 text-center">
-            <Link
-              to="/skills"
-              className="inline-flex items-center px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary/90 transition-all shadow-lg hover:shadow-primary/30"
-            >
+            <Link to="/skills" className="inline-flex items-center px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary/90 transition-all shadow-lg hover:shadow-primary/30">
               View All Skills
               <ArrowRight size={18} className="ml-2" />
             </Link>
@@ -212,11 +184,7 @@ const Home = () => {
       {/* Featured Projects with Animation */}
       <section className="py-16 md:py-24 bg-muted/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionTitle 
-            title="Featured Projects" 
-            subtitle="Check out some of my recent game development work" 
-            align="center"
-          />
+          <SectionTitle title="Featured Projects" subtitle="Check out some of my recent game development work" align="center" />
           
           <div className="relative">
             {/* Decorative animated elements */}
@@ -224,28 +192,12 @@ const Home = () => {
             <div className="absolute -bottom-10 -right-10 w-16 h-16 bg-gradient-to-r from-portfolio-primary to-portfolio-highlight rounded-full blur-xl opacity-20 animate-float pointer-events-none"></div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-              {featuredProjects.map((project, index) => (
-                <ProjectCard
-                  key={project.id}
-                  title={project.title}
-                  description={project.description}
-                  image={project.image}
-                  tags={project.tags}
-                  github={project.github}
-                  slug={project.slug}
-                  date={project.date}
-                  role={project.role}
-                  className={`opacity-0 animate-fade-in-delay-${index + 1}`}
-                />
-              ))}
+              {featuredProjects.map((project, index) => <ProjectCard key={project.id} title={project.title} description={project.description} image={project.image} tags={project.tags} github={project.github} slug={project.slug} date={project.date} role={project.role} className={`opacity-0 animate-fade-in-delay-${index + 1}`} />)}
             </div>
           </div>
           
           <div className="mt-12 text-center">
-            <Link
-              to="/projects"
-              className="inline-flex items-center px-6 py-3 bg-secondary text-white font-medium rounded-lg hover:bg-secondary/90 transition-all shadow-lg hover:shadow-secondary/30"
-            >
+            <Link to="/projects" className="inline-flex items-center px-6 py-3 bg-secondary text-white font-medium rounded-lg hover:bg-secondary/90 transition-all shadow-lg hover:shadow-secondary/30">
               View All Projects
               <ArrowRight size={18} className="ml-2" />
             </Link>
@@ -256,11 +208,7 @@ const Home = () => {
       {/* Contact Section with Animation */}
       <section id="contact" className="py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionTitle 
-            title="Get In Touch" 
-            subtitle="Let's connect and create something amazing together" 
-            align="center"
-          />
+          <SectionTitle title="Get In Touch" subtitle="Let's connect and create something amazing together" align="center" />
           
           <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="space-y-8">
@@ -299,8 +247,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-    </MainLayout>
-  );
+    </MainLayout>;
 };
-
 export default Home;

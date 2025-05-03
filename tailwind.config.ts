@@ -53,24 +53,13 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
-				},
-				// Custom colors for Mikhail's portfolio
 				portfolio: {
-					primary: '#2D3250',     // Deep blue/purple
-					secondary: '#424769',   // Medium blue/purple
-					accent: '#7077A1',      // Light blue/purple
-					highlight: '#F6B17A',   // Orange highlight
-					light: '#F2F7FF',       // Light background
-					dark: '#1A1D2E',        // Dark background
+					primary: 'hsl(var(--portfolio-primary))',     // Blue
+					secondary: 'hsl(var(--portfolio-secondary))',  // Purple
+					accent: 'hsl(var(--portfolio-accent))',        // Pink
+					highlight: 'hsl(var(--portfolio-highlight))',  // Green
+					light: 'hsl(var(--portfolio-light))',          // Light background
+					dark: 'hsl(var(--portfolio-dark))',            // Dark background
 				}
 			},
 			borderRadius: {
@@ -106,7 +95,25 @@ export default {
 						opacity: '1',
 						transform: 'translateX(0)'
 					}
-				}
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-20px)' },
+				},
+				'pulse-slow': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.7' },
+				},
+				'wave': {
+					'0%': { transform: 'rotate(0.0deg)' },
+					'10%': { transform: 'rotate(14deg)' },
+					'20%': { transform: 'rotate(-8deg)' },
+					'30%': { transform: 'rotate(14deg)' },
+					'40%': { transform: 'rotate(-4deg)' },
+					'50%': { transform: 'rotate(10.0deg)' },
+					'60%': { transform: 'rotate(0.0deg)' },
+					'100%': { transform: 'rotate(0.0deg)' },
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -117,6 +124,9 @@ export default {
 				'fade-in-delay-3': 'fade-in 0.5s ease-out 0.3s forwards',
 				'fade-in-delay-4': 'fade-in 0.5s ease-out 0.4s forwards',
 				'fade-in-right': 'fade-in-right 0.5s ease-out forwards',
+				'float': 'float 6s ease-in-out infinite',
+				'pulse-slow': 'pulse-slow 3s ease-in-out infinite',
+				'wave': 'wave 2.5s infinite',
 			},
 			fontFamily: {
 				sans: ['Inter', 'sans-serif'],

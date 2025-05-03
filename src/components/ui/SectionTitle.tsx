@@ -18,19 +18,24 @@ const SectionTitle = ({ title, subtitle, className, align = 'left' }: SectionTit
     )}>
       <h2 
         className={cn(
-          "text-3xl md:text-4xl font-bold text-portfolio-primary",
-          align === 'center' && "after:left-1/2 after:-translate-x-1/2",
-          align === 'right' && "after:right-0 after:left-auto",
-          "relative after:content-[''] after:absolute after:-bottom-3 after:left-0 after:w-16 after:h-1 after:bg-portfolio-highlight"
+          "text-3xl md:text-4xl font-bold gradient-text inline-block",
+          className
         )}
       >
         {title}
       </h2>
       {subtitle && (
-        <p className="mt-6 text-lg text-muted-foreground max-w-3xl">
+        <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
           {subtitle}
         </p>
       )}
+      <div 
+        className={cn(
+          "h-1 w-24 bg-accent mt-4 rounded-full",
+          align === 'center' && "mx-auto",
+          align === 'right' && "ml-auto"
+        )}
+      ></div>
     </div>
   );
 };

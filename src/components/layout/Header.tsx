@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { ThemeToggle } from '@/components/theme/ThemeToggle';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,10 +24,9 @@ const Header = () => {
   
   const navItems = [
     { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Projects', path: '/projects' },
     { name: 'Experience', path: '/experience' },
     { name: 'Skills', path: '/skills' },
+    { name: 'Projects', path: '/projects' },
     { name: 'Contact', path: '/contact' },
   ];
   
@@ -44,14 +44,14 @@ const Header = () => {
           <div className="flex-shrink-0">
             <Link 
               to="/" 
-              className="font-bold text-xl text-portfolio-primary hover:text-portfolio-secondary"
+              className="font-bold text-xl text-primary hover:text-secondary transition-colors duration-300"
             >
               Mikhail Govind
             </Link>
           </div>
           
-          <div className="hidden md:block">
-            <nav className="ml-10 flex items-center space-x-8">
+          <div className="hidden md:flex md:items-center md:space-x-6">
+            <nav className="flex items-center space-x-8">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
@@ -62,12 +62,15 @@ const Header = () => {
                 </Link>
               ))}
             </nav>
+            
+            <ThemeToggle />
           </div>
           
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center space-x-4">
+            <ThemeToggle />
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 rounded-md text-portfolio-primary hover:text-portfolio-accent focus:outline-none"
+              className="p-2 rounded-md text-foreground hover:text-accent focus:outline-none"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -85,8 +88,8 @@ const Header = () => {
                 to={item.path}
                 className={`${
                   isActive(item.path) 
-                    ? 'bg-portfolio-accent/10 text-portfolio-accent'
-                    : 'text-foreground hover:bg-portfolio-accent/5 hover:text-portfolio-accent'
+                    ? 'bg-accent/10 text-accent'
+                    : 'text-foreground hover:bg-accent/5 hover:text-accent'
                 } block px-3 py-2 rounded-md text-base font-medium`}
               >
                 {item.name}

@@ -1,12 +1,13 @@
 
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Code, Sparkles, Layers, Rocket, User, Briefcase, Mail } from "lucide-react";
 import { projects } from "@/data/projects";
-import { experiences } from "@/data/experience";
 import MainLayout from "@/components/layout/MainLayout";
 import SectionTitle from "@/components/ui/SectionTitle";
 import ProjectCard from "@/components/ui/ProjectCard";
+import SkillCard from "@/components/ui/SkillCard";
+import ContactForm from "@/components/ui/ContactForm";
 
 const Home = () => {
   // Scroll to top on page load
@@ -20,52 +21,197 @@ const Home = () => {
   return (
     <MainLayout>
       {/* Hero Section */}
-      <section className="bg-portfolio-primary text-white">
-        <div className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+      <section className="py-20 animated-bg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7 space-y-8">
-              <div>
-                <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight opacity-0 animate-fade-in">
-                  Mikhail Govind
-                </h1>
-                <h2 className="mt-2 text-2xl sm:text-3xl font-medium text-portfolio-highlight opacity-0 animate-fade-in-delay-1">
-                  Unity Developer & Game Designer
-                </h2>
-              </div>
-              <p className="text-lg sm:text-xl leading-relaxed max-w-2xl opacity-0 animate-fade-in-delay-2">
-                Honours graduate in Digital Arts, specializing in Game Design & Development with advanced Unity and C# expertise. Passionate about creating immersive gaming experiences and interactive systems.
+              <h2 className="text-2xl sm:text-3xl font-medium text-accent opacity-0 animate-fade-in">
+                Game Designer & Developer
+              </h2>
+              <p className="text-lg sm:text-xl leading-relaxed max-w-2xl opacity-0 animate-fade-in-delay-1">
+                Passionate about creating immersive gaming experiences and interactive systems.
               </p>
-              <div className="flex flex-wrap gap-4 opacity-0 animate-fade-in-delay-3">
+              <div className="flex flex-wrap gap-4 opacity-0 animate-fade-in-delay-2">
                 <Link
                   to="/projects"
-                  className="inline-flex items-center px-6 py-3 bg-portfolio-highlight text-portfolio-primary font-medium rounded-md hover:bg-white transition-colors"
+                  className="inline-flex items-center px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary/90 transition-all shadow-lg hover:shadow-primary/30"
                 >
                   View My Projects
                   <ArrowRight size={18} className="ml-2" />
                 </Link>
                 <Link
                   to="/contact"
-                  className="inline-flex items-center px-6 py-3 bg-transparent text-white font-medium rounded-md border-2 border-white hover:bg-white hover:text-portfolio-primary transition-colors"
+                  className="inline-flex items-center px-6 py-3 bg-transparent text-foreground font-medium rounded-lg border-2 border-border hover:border-accent hover:text-accent transition-all"
                 >
                   Contact Me
                 </Link>
               </div>
             </div>
-            <div className="lg:col-span-5 opacity-0 animate-fade-in-delay-4">
-              <div className="bg-portfolio-secondary p-1 rounded-lg shadow-xl">
-                <img
-                  src="/lovable-uploads/978496b2-8932-43b1-8a0f-94ad86e56d30.png"
-                  alt="Mikhail Govind"
-                  className="w-full h-auto rounded-md"
-                />
+            <div className="lg:col-span-5 opacity-0 animate-fade-in-delay-3">
+              <div className="relative">
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-primary via-accent to-secondary rounded-3xl blur opacity-30 animate-pulse-slow"></div>
+                <div className="relative bg-card rounded-2xl p-6 shadow-xl">
+                  <div className="animate-float">
+                    <div className="grid grid-cols-3 gap-6">
+                      <div className="aspect-square rounded-lg bg-gradient-to-br from-primary to-secondary"></div>
+                      <div className="aspect-square rounded-lg bg-gradient-to-br from-secondary to-accent"></div>
+                      <div className="aspect-square rounded-lg bg-gradient-to-br from-accent to-highlight"></div>
+                      <div className="aspect-square rounded-lg bg-gradient-to-br from-accent to-primary"></div>
+                      <div className="aspect-square rounded-lg bg-gradient-to-br from-highlight to-secondary"></div>
+                      <div className="aspect-square rounded-lg bg-gradient-to-br from-secondary to-primary"></div>
+                      <div className="aspect-square rounded-lg bg-gradient-to-br from-primary to-highlight"></div>
+                      <div className="aspect-square rounded-lg bg-gradient-to-br from-highlight to-accent"></div>
+                      <div className="aspect-square rounded-lg bg-gradient-to-br from-secondary to-highlight"></div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
+      {/* About Section */}
+      <section id="about" className="py-16 md:py-24 bg-muted/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionTitle 
+            title="About Me" 
+            subtitle="Learn more about my background and philosophy" 
+            align="center"
+          />
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
+            <div className="glass-card p-6 hover:shadow-lg transition-all">
+              <div className="flex items-center mb-4">
+                <div className="feature-icon mr-4">
+                  <User size={24} />
+                </div>
+                <h3 className="text-xl font-bold">Background</h3>
+              </div>
+              <p className="text-muted-foreground">
+                I'm a Digital Arts graduate from the University of the Witwatersrand, specializing in Game Design & Development and Creative Writing. With expertise in Unity and C#, I build immersive games and interactive systems that engage players across platforms.
+              </p>
+            </div>
+            
+            <div className="glass-card p-6 hover:shadow-lg transition-all">
+              <div className="flex items-center mb-4">
+                <div className="feature-icon mr-4">
+                  <Sparkles size={24} />
+                </div>
+                <h3 className="text-xl font-bold">Philosophy</h3>
+              </div>
+              <p className="text-muted-foreground">
+                I believe in user-centered design that balances technical excellence with creative innovation. My approach combines robust programming with compelling storytelling to create meaningful player experiences that resonate on multiple levels.
+              </p>
+            </div>
+          </div>
+          
+          <div className="mt-12 text-center">
+            <Link
+              to="/experience"
+              className="inline-flex items-center text-accent hover:text-accent/80 font-medium"
+            >
+              Learn more about my experience
+              <ArrowRight size={16} className="ml-1" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Skills Highlight Section */}
+      <section className="py-16 md:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <SectionTitle 
+            title="Core Skills" 
+            subtitle="Technical expertise and creative capabilities" 
+            align="center"
+          />
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+            <div className="glass-card p-6 hover:shadow-lg transition-all">
+              <div className="flex items-center mb-4">
+                <div className="feature-icon mr-4">
+                  <Code size={24} />
+                </div>
+                <h3 className="text-xl font-bold">Development</h3>
+              </div>
+              <ul className="space-y-2">
+                <li className="flex items-center">
+                  <span className="mr-2 text-secondary">•</span>
+                  <span>Unity & C# Programming</span>
+                </li>
+                <li className="flex items-center">
+                  <span className="mr-2 text-secondary">•</span>
+                  <span>Game Optimization</span>
+                </li>
+                <li className="flex items-center">
+                  <span className="mr-2 text-secondary">•</span>
+                  <span>UI/UX Development</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div className="glass-card p-6 hover:shadow-lg transition-all">
+              <div className="flex items-center mb-4">
+                <div className="feature-icon mr-4">
+                  <Layers size={24} />
+                </div>
+                <h3 className="text-xl font-bold">Design</h3>
+              </div>
+              <ul className="space-y-2">
+                <li className="flex items-center">
+                  <span className="mr-2 text-secondary">•</span>
+                  <span>Game Mechanics Design</span>
+                </li>
+                <li className="flex items-center">
+                  <span className="mr-2 text-secondary">•</span>
+                  <span>Level Design</span>
+                </li>
+                <li className="flex items-center">
+                  <span className="mr-2 text-secondary">•</span>
+                  <span>Narrative Design</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div className="glass-card p-6 hover:shadow-lg transition-all">
+              <div className="flex items-center mb-4">
+                <div className="feature-icon mr-4">
+                  <Rocket size={24} />
+                </div>
+                <h3 className="text-xl font-bold">Creative</h3>
+              </div>
+              <ul className="space-y-2">
+                <li className="flex items-center">
+                  <span className="mr-2 text-secondary">•</span>
+                  <span>Storytelling</span>
+                </li>
+                <li className="flex items-center">
+                  <span className="mr-2 text-secondary">•</span>
+                  <span>Digital Art</span>
+                </li>
+                <li className="flex items-center">
+                  <span className="mr-2 text-secondary">•</span>
+                  <span>Audio Integration</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="mt-12 text-center">
+            <Link
+              to="/skills"
+              className="inline-flex items-center px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary/90 transition-all shadow-lg hover:shadow-primary/30"
+            >
+              View All Skills
+              <ArrowRight size={18} className="ml-2" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Featured Projects */}
-      <section className="py-16 md:py-24 bg-gray-50">
+      <section className="py-16 md:py-24 bg-muted/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionTitle 
             title="Featured Projects" 
@@ -92,7 +238,7 @@ const Home = () => {
           <div className="mt-12 text-center">
             <Link
               to="/projects"
-              className="inline-flex items-center px-6 py-3 bg-portfolio-primary text-white font-medium rounded-md hover:bg-portfolio-secondary transition-colors"
+              className="inline-flex items-center px-6 py-3 bg-secondary text-white font-medium rounded-lg hover:bg-secondary/90 transition-all shadow-lg hover:shadow-secondary/30"
             >
               View All Projects
               <ArrowRight size={18} className="ml-2" />
@@ -100,105 +246,51 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      {/* About Section */}
-      <section className="py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <SectionTitle 
-                title="About Me" 
-                subtitle="Game developer with a passion for creating immersive experiences" 
-              />
-              <div className="prose prose-lg max-w-none">
-                <p className="mb-4">
-                  I'm a recent Honours graduate in Digital Arts from the University of the Witwatersrand, where I specialized in Game Design & Development and Creative Writing.
-                </p>
-                <p className="mb-4">
-                  My passion lies in building immersive games and interactive systems that provide engaging experiences across platforms. I have expertise in Unity and C#, with experience in designing levels, implementing gameplay mechanics, and optimizing performance for smooth player experiences.
-                </p>
-                <p className="mb-6">
-                  Currently, I work as a game design tutor at the University of the Witwatersrand, while actively seeking opportunities in game development, software development, or creative writing roles.
-                </p>
-                <Link
-                  to="/about"
-                  className="inline-flex items-center font-medium text-portfolio-accent hover:text-portfolio-primary transition-colors"
-                >
-                  Learn more about me
-                  <ArrowRight size={18} className="ml-2" />
-                </Link>
-              </div>
-            </div>
-            <div className="relative">
-              <div className="bg-portfolio-accent/10 absolute inset-0 rounded-xl -rotate-3 transform"></div>
-              <div className="bg-white p-1 rounded-xl shadow-md relative z-10">
-                <img
-                  src="/lovable-uploads/bab2009c-c966-4d10-a82c-358af370a63e.png"
-                  alt="About Mikhail Govind"
-                  className="w-full h-auto rounded-lg"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Experience Preview */}
-      <section className="py-16 md:py-24 bg-gray-50">
+      
+      {/* Contact Section */}
+      <section id="contact" className="py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionTitle 
-            title="My Experience" 
-            subtitle="Where I've worked and what I've learned along the way" 
+            title="Get In Touch" 
+            subtitle="Let's connect and create something amazing together" 
             align="center"
           />
           
-          <div className="mt-12 bg-white rounded-xl shadow-md p-8 border border-border">
+          <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="space-y-8">
-              {experiences.slice(0, 2).map((experience, index) => (
-                <div key={index} className="flex flex-col md:flex-row gap-4">
-                  <div className="md:w-32 flex-shrink-0">
-                    <p className="text-sm text-muted-foreground">{experience.period}</p>
+              <div className="glass-card p-6">
+                <h3 className="text-2xl font-bold mb-6 gradient-text">Ready to collaborate?</h3>
+                <p className="text-muted-foreground mb-6">
+                  I'm currently looking for new opportunities in game development, 
+                  software development, or creative writing. Whether you have a question, 
+                  a project idea, or just want to connect, I'd love to hear from you.
+                </p>
+                
+                <div className="space-y-4">
+                  <div className="flex items-center">
+                    <div className="feature-icon mr-4">
+                      <Mail size={20} />
+                    </div>
+                    <a href="mailto:27miks12@gmail.com" className="text-foreground hover:text-accent transition-colors">
+                      27miks12@gmail.com
+                    </a>
                   </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-portfolio-primary">{experience.title}</h3>
-                    <p className="text-portfolio-secondary">{experience.company}</p>
-                    <ul className="mt-2 list-disc pl-5 space-y-1">
-                      {experience.description.slice(0, 2).map((item, i) => (
-                        <li key={i} className="text-foreground">{item}</li>
-                      ))}
-                    </ul>
+                  
+                  <div className="flex items-center">
+                    <div className="feature-icon mr-4">
+                      <Briefcase size={20} />
+                    </div>
+                    <span>Based in Johannesburg, South Africa</span>
                   </div>
+                  <p>Available for remote opportunities worldwide</p>
                 </div>
-              ))}
+              </div>
             </div>
             
-            <div className="mt-8 text-center">
-              <Link
-                to="/experience"
-                className="inline-flex items-center font-medium text-portfolio-accent hover:text-portfolio-primary transition-colors"
-              >
-                View full experience
-                <ArrowRight size={18} className="ml-2" />
-              </Link>
+            <div className="glass-card p-6">
+              <ContactForm />
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="py-16 md:py-20 bg-portfolio-primary text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Let's Work Together</h2>
-          <p className="text-lg md:text-xl max-w-2xl mx-auto mb-8">
-            I'm currently looking for new opportunities in game development, software development, or creative writing. Let's connect and create something amazing!
-          </p>
-          <Link
-            to="/contact"
-            className="inline-flex items-center px-8 py-3 bg-portfolio-highlight text-portfolio-primary font-medium rounded-md hover:bg-white transition-colors"
-          >
-            Get In Touch
-            <ArrowRight size={18} className="ml-2" />
-          </Link>
         </div>
       </section>
     </MainLayout>

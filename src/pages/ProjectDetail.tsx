@@ -41,10 +41,13 @@ const ProjectDetail = () => {
           <div className="aspect-video relative">
             {project.videoSrc ? (
               <video 
-                src={project.videoSrc}
-                className="w-full h-full object-cover"
-                controls
-                playsInline
+              src={project.videoSrc}
+              className="w-full h-full object-cover"
+              autoPlay
+              muted
+              loop
+              playsInline
+              key={project.id} // Add this line
               />
             ) : (
               <img 

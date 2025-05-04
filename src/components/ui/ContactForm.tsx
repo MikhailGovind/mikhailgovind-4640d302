@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { toast } from 'sonner';
-import { Mail, Send } from 'lucide-react';
+import { Send } from 'lucide-react';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -21,18 +21,32 @@ const ContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // This is a mock submission - in a real implementation, you'd send this to an API endpoint
-    // For now, we'll just simulate a successful submission
-    setTimeout(() => {
-      toast.success("Message sent successfully! I'll get back to you soon.");
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
+    try {
+      const response = await fetch("https://formspree.io/f/mzzrrpaa", {
+        method: "POST",
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
       });
+
+      if (response.ok) {
+        toast.success("Message sent successfully! I'll get back to you soon.");
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+      } else {
+        toast.error("Failed to send message. Please try again later.");
+      }
+    } catch (error) {
+      toast.error("An error occurred. Please check your connection.");
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
   
   return (

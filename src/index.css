@@ -7,26 +7,26 @@
 
 @layer base {
   :root {
-    /* Light mode */
+    /* Light mode - updated colors */
     --background: 210 40% 98%;
-    --foreground: 222 47% 11%;
+    --foreground: 230 25% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card-foreground: 230 25% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    --popover-foreground: 230 25% 15%;
 
-    --primary: 222 89% 55%;
+    --primary: 222 75% 50%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 250 89% 65%;
+    --secondary: 250 70% 60%;
     --secondary-foreground: 210 40% 98%;
 
     --muted: 210 40% 96%;
     --muted-foreground: 215 16% 47%;
 
-    --accent: 349 89% 65%;
+    --accent: 160 70% 50%;  /* More prominent green */
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 84% 60%;
@@ -34,53 +34,53 @@
 
     --border: 214 32% 91%;
     --input: 214 32% 91%;
-    --ring: 222 89% 55%;
+    --ring: 222 75% 50%;
 
     --radius: 0.75rem;
     
-    --portfolio-primary: 222 89% 55%;
-    --portfolio-secondary: 250 89% 65%;
-    --portfolio-accent: 349 89% 65%;
-    --portfolio-highlight: 160 84% 55%;
+    --portfolio-primary: 222 75% 50%;
+    --portfolio-secondary: 250 70% 60%;
+    --portfolio-accent: 160 70% 50%;    /* Green as main accent */
+    --portfolio-highlight: 349 80% 65%; /* Pink as highlight */
     --portfolio-light: 210 40% 98%;
-    --portfolio-dark: 222 47% 11%;
+    --portfolio-dark: 230 25% 15%;
   }
 
   .dark {
-    --background: 220 10% 10%; /* Dark grey instead of dark blue */
+    --background: 230 25% 10%;
     --foreground: 210 40% 98%;
 
-    --card: 220 10% 15%; /* Dark grey card background */
+    --card: 230 25% 15%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 220 10% 15%;
+    --popover: 230 25% 15%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 222 89% 55%;
+    --primary: 222 75% 60%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 250 89% 65%;
+    --secondary: 250 70% 70%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 217 10% 25%; /* Adjusted for better contrast */
+    --muted: 230 20% 20%;
     --muted-foreground: 215 16% 70%;
 
-    --accent: 349 89% 65%;
+    --accent: 160 70% 50%;
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217 10% 25%; /* Adjusted for better contrast */
-    --input: 217 10% 25%;
-    --ring: 222 89% 55%;
+    --border: 230 20% 20%;
+    --input: 230 20% 20%;
+    --ring: 222 75% 60%;
 
-    --portfolio-primary: 222 89% 55%;
-    --portfolio-secondary: 250 89% 65%;
-    --portfolio-accent: 349 89% 65%;
-    --portfolio-highlight: 160 84% 55%;
+    --portfolio-primary: 222 75% 60%;
+    --portfolio-secondary: 250 70% 70%;
+    --portfolio-accent: 160 70% 50%;
+    --portfolio-highlight: 349 80% 65%;
     --portfolio-light: 210 40% 98%;
-    --portfolio-dark: 222 47% 11%;
+    --portfolio-dark: 230 25% 10%;
   }
 }
 
@@ -141,7 +141,45 @@
   }
   
   .feature-icon {
-    @apply bg-gradient-to-br from-primary to-secondary p-3 rounded-lg text-white;
+    @apply bg-gradient-to-br from-accent to-primary p-3 rounded-lg text-white;
+  }
+  
+  .experience-item {
+    @apply relative border-l-2 border-portfolio-accent pl-8 pb-12 hover:border-portfolio-primary transition-colors;
+  }
+  
+  .experience-item::before {
+    content: '';
+    @apply absolute w-4 h-4 bg-portfolio-accent rounded-full -left-[9px] top-1 
+           border-4 border-background transition-colors;
+  }
+  
+  .experience-item:hover::before {
+    @apply bg-portfolio-primary;
+  }
+  
+  .experience-date {
+    @apply text-sm text-muted-foreground mb-1;
+  }
+  
+  .experience-title {
+    @apply text-xl font-bold text-primary;
+  }
+  
+  .experience-company {
+    @apply text-secondary font-medium;
+  }
+  
+  .moving-mesh {
+    @apply fixed inset-0 z-[-1] opacity-30 pointer-events-none;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23a3b2c6' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+    animation: gradientMove 30s linear infinite;
+  }
+  
+  .wave-animation {
+    @apply inline-block;
+    animation: wave 2.5s infinite;
+    transform-origin: 70% 70%;
   }
 }
 
@@ -176,6 +214,26 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+@keyframes wave {
+  0% { transform: rotate(0.0deg); }
+  10% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  30% { transform: rotate(14deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10.0deg); }
+  60% { transform: rotate(0.0deg); }
+  100% { transform: rotate(0.0deg); }
 }
 
 @layer utilities {

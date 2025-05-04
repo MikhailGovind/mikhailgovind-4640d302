@@ -38,13 +38,13 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 backdrop-blur-lg bg-background/90 border-b border-border">
+    <header className="sticky top-0 z-50 backdrop-blur-lg bg-background/90">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <div className="flex-shrink-0">
             <Link 
               to="/" 
-              className="font-bold text-2xl text-primary hover:text-secondary transition-colors duration-300"
+              className="font-bold text-2xl md:text-3xl text-primary hover:text-secondary transition-colors duration-300"
             >
               Mikhail Govind
             </Link>
@@ -80,7 +80,7 @@ const Header = () => {
       
       {/* Mobile menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-background/95 backdrop-blur-lg border-b border-border animate-fade-in">
+        <div className="md:hidden bg-background/95 backdrop-blur-lg animate-fade-in">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navItems.map((item) => (
               <Link

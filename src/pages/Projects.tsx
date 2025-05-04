@@ -13,6 +13,9 @@ const Projects = () => {
 
   return (
     <MainLayout>
+      {/* Moving background mesh */}
+      <div className="moving-mesh"></div>
+      
       <div className="page-container">
         <SectionTitle 
           title="My Projects" 
@@ -26,11 +29,15 @@ const Projects = () => {
               title={project.title}
               description={project.description}
               image={project.image}
+              videoSrc={project.videoSrc}
               tags={project.tags}
               github={project.github}
               slug={project.slug}
               date={project.date}
               role={project.role}
+              buildZip={project.buildZip}
+              hasDesignDoc={project.hasDesignDoc}
+              hasTechDoc={project.hasTechDoc}
             />
           ))}
         </div>

@@ -9,8 +9,12 @@ export interface Project {
   fullRoles?: string;
   date: string;
   image: string;
+  videoSrc?: string;
   tags: string[];
   github?: string;
+  buildZip?: string;
+  hasDesignDoc?: boolean;
+  hasTechDoc?: boolean;
   features?: string[];
   technologies?: string[];
 }
@@ -31,8 +35,12 @@ export const projects: Project[] = [
     fullRoles: "Lead Developer, Game Designer, Narrative Designer, UI Programmer, Sound Designer",
     date: "November 2024",
     image: "https://via.placeholder.com/600x400?text=DJs+of+Shaolin",
+    videoSrc: "",
     tags: ["Unity", "C#", "Game Design", "Rhythm Game", "Pixel Art"],
     github: "https://github.com/MikhailGovind/TheDJsOFShaolin---Rhythm-Game",
+    buildZip: "/builds/djs-of-shaolin.zip",
+    hasDesignDoc: true,
+    hasTechDoc: true,
     features: [
       "Story-driven gameplay progression",
       "DJ-based rhythm mechanics",
@@ -57,8 +65,12 @@ export const projects: Project[] = [
     fullRoles: "Lead Programmer, Procedural Animation Developer, Level Generation Designer, Quest System Developer",
     date: "September 2024",
     image: "https://via.placeholder.com/600x400?text=Itsy+Bitsy+Spider",
+    videoSrc: "",
     tags: ["Unity", "C#", "Procedural Generation", "Animation", "3D Game"],
     github: "https://github.com/JeanFrancoisRetief/DARProject_GamesAndAI",
+    buildZip: "/builds/itsy-bitsy-spider.zip",
+    hasDesignDoc: true,
+    hasTechDoc: false,
     features: [
       "Procedural spider animation",
       "Dynamic level generation",
@@ -83,8 +95,12 @@ export const projects: Project[] = [
     fullRoles: "Lead Programmer, Narrative Designer, Quest System Developer, Game Mechanics Designer, UI Programmer",
     date: "June 2024",
     image: "https://via.placeholder.com/600x400?text=Playing+Game",
+    videoSrc: "",
     tags: ["Unity", "C#", "Narrative Design", "Game Design", "Metafiction"],
     github: "https://github.com/JeanFrancoisRetief/Group1Game",
+    buildZip: "/builds/playing-game.zip",
+    hasDesignDoc: true,
+    hasTechDoc: true,
     features: [
       "Metafictional narrative elements",
       "Farm simulation mechanics",
@@ -109,8 +125,12 @@ export const projects: Project[] = [
     fullRoles: "Lead Programmer, Level Designer, Sound Designer, Lighting Designer, UI Developer",
     date: "November 2023",
     image: "https://via.placeholder.com/600x400?text=S.O.D.A",
+    videoSrc: "",
     tags: ["Unity", "C#", "Horror Game", "Level Design", "Sound Design"],
     github: "https://github.com/JeanFrancoisRetief/GDFinalGame-Group2",
+    buildZip: "/builds/soda.zip",
+    hasDesignDoc: true,
+    hasTechDoc: true,
     features: [
       "Atmospheric horror elements",
       "Resource management mechanics",
@@ -135,8 +155,12 @@ export const projects: Project[] = [
     fullRoles: "Programmer, Systems Designer, Camera System Developer, AI Behavior Programmer",
     date: "August 2023",
     image: "https://via.placeholder.com/600x400?text=FNAF+Clone",
+    videoSrc: "",
     tags: ["Unity", "C#", "Game Mechanics", "Event-Driven Design", "Horror Game"],
     github: "https://github.com/JeanFrancoisRetief/GDCloneGroupTwo7_repo",
+    buildZip: "/builds/fnaf-clone.zip",
+    hasDesignDoc: true,
+    hasTechDoc: true,
     features: [
       "Security camera system",
       "Event-driven AI behavior",
@@ -161,8 +185,12 @@ export const projects: Project[] = [
     fullRoles: "Creative Lead, Puzzle Designer, Level Designer, Programmer, Game Mechanics Designer",
     date: "November 2022",
     image: "https://via.placeholder.com/600x400?text=Space+Escape",
+    videoSrc: "",
     tags: ["Unity", "C#", "2D Game", "Puzzle Design", "Level Design"],
     github: "https://github.com/MikhailGovind/DADP-November-Exam",
+    buildZip: "/builds/space-escape.zip",
+    hasDesignDoc: false,
+    hasTechDoc: false,
     features: [
       "Puzzle-based level design",
       "Astronaut character controls",

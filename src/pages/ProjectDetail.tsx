@@ -1,7 +1,7 @@
 
 import { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, Github } from "lucide-react";
+import { ArrowLeft, Download, FileText, Github, Video } from "lucide-react";
 import MainLayout from "@/components/layout/MainLayout";
 import { getProjectBySlug, projects } from "@/data/projects";
 import NotFound from "./NotFound";
@@ -21,6 +21,9 @@ const ProjectDetail = () => {
   
   return (
     <MainLayout>
+      {/* Moving background mesh */}
+      <div className="moving-mesh"></div>
+      
       <div className="page-container">
         {/* Back Button */}
         <div className="mb-8">
@@ -36,11 +39,20 @@ const ProjectDetail = () => {
         {/* Hero Section */}
         <div className="bg-card dark:bg-card rounded-lg shadow-md overflow-hidden border border-border">
           <div className="aspect-video relative">
-            <img 
-              src={project.image} 
-              alt={project.title} 
-              className="w-full h-full object-cover"
-            />
+            {project.videoSrc ? (
+              <video 
+                src={project.videoSrc}
+                className="w-full h-full object-cover"
+                controls
+                playsInline
+              />
+            ) : (
+              <img 
+                src={project.image} 
+                alt={project.title} 
+                className="w-full h-full object-cover"
+              />
+            )}
           </div>
           
           <div className="p-6 md:p-8">
@@ -50,17 +62,30 @@ const ProjectDetail = () => {
                 <p className="text-portfolio-secondary mt-1">{project.fullRoles || project.role} | {project.date}</p>
               </div>
               
-              {project.github && (
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center px-4 py-2 bg-portfolio-accent text-white font-medium rounded-md hover:bg-portfolio-secondary transition-colors self-start"
-                >
-                  <Github size={18} className="mr-2" />
-                  View on GitHub
-                </a>
-              )}
+              <div className="flex flex-wrap gap-3">
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-4 py-2 bg-portfolio-primary text-white font-medium rounded-md hover:bg-portfolio-primary/90 transition-colors"
+                  >
+                    <Github size={18} className="mr-2" />
+                    View on GitHub
+                  </a>
+                )}
+                
+                {project.buildZip && (
+                  <a
+                    href={project.buildZip}
+                    download
+                    className="inline-flex items-center px-4 py-2 bg-portfolio-secondary text-white font-medium rounded-md hover:bg-portfolio-secondary/90 transition-colors"
+                  >
+                    <Download size={18} className="mr-2" />
+                    Download Build
+                  </a>
+                )}
+              </div>
             </div>
             
             <div className="mt-6">
@@ -72,6 +97,31 @@ const ProjectDetail = () => {
                     {project.longDescription.map((paragraph, index) => (
                       <p key={index}>{paragraph}</p>
                     ))}
+                  </div>
+                )}
+                
+                {/* Document Links */}
+                {(project.hasDesignDoc || project.hasTechDoc) && (
+                  <div className="flex flex-wrap gap-4 my-8">
+                    {project.hasDesignDoc && (
+                      <Link
+                        to={`/documents/design/${project.slug}`}
+                        className="inline-flex items-center px-4 py-2 bg-portfolio-accent text-white font-medium rounded-md hover:bg-portfolio-accent/90 transition-colors"
+                      >
+                        <FileText size={18} className="mr-2" />
+                        View Design Document
+                      </Link>
+                    )}
+                    
+                    {project.hasTechDoc && (
+                      <Link
+                        to={`/documents/technical/${project.slug}`}
+                        className="inline-flex items-center px-4 py-2 bg-portfolio-highlight text-white font-medium rounded-md hover:bg-portfolio-highlight/90 transition-colors"
+                      >
+                        <Video size={18} className="mr-2" />
+                        View Technical Document
+                      </Link>
+                    )}
                   </div>
                 )}
                 
@@ -117,11 +167,22 @@ const ProjectDetail = () => {
               .map(relatedProject => (
                 <div key={relatedProject.id} className="project-card">
                   <div className="relative overflow-hidden aspect-video">
-                    <img
-                      src={relatedProject.image}
-                      alt={relatedProject.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
+                    {relatedProject.videoSrc ? (
+                      <video
+                        src={relatedProject.videoSrc}
+                        className="w-full h-full object-cover"
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                      />
+                    ) : (
+                      <img
+                        src={relatedProject.image}
+                        alt={relatedProject.title}
+                        className="w-full h-full object-cover"
+                      />
+                    )}
                   </div>
                   <div className="p-4">
                     <h3 className="text-lg font-bold text-portfolio-primary">{relatedProject.title}</h3>

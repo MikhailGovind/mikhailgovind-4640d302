@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { toast } from 'sonner';
-import { Mail, Send } from 'lucide-react';
+import { Send } from 'lucide-react';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -22,7 +22,6 @@ const ContactForm = () => {
     setIsSubmitting(true);
     
     // This is a mock submission - in a real implementation, you'd send this to an API endpoint
-    // For now, we'll just simulate a successful submission
     setTimeout(() => {
       toast.success("Message sent successfully! I'll get back to you soon.");
       setFormData({
@@ -49,7 +48,7 @@ const ContactForm = () => {
             value={formData.name}
             onChange={handleChange}
             required
-            className="w-full px-4 py-2 bg-background border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+            className="w-full px-4 py-2 bg-background border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-portfolio-highlight focus:border-transparent transition-all"
           />
         </div>
         <div>
@@ -63,7 +62,7 @@ const ContactForm = () => {
             value={formData.email}
             onChange={handleChange}
             required
-            className="w-full px-4 py-2 bg-background border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+            className="w-full px-4 py-2 bg-background border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-portfolio-highlight focus:border-transparent transition-all"
           />
         </div>
       </div>
@@ -79,7 +78,7 @@ const ContactForm = () => {
           value={formData.subject}
           onChange={handleChange}
           required
-          className="w-full px-4 py-2 bg-background border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+          className="w-full px-4 py-2 bg-background border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-portfolio-highlight focus:border-transparent transition-all"
         />
       </div>
       
@@ -94,7 +93,7 @@ const ContactForm = () => {
           value={formData.message}
           onChange={handleChange}
           required
-          className="w-full px-4 py-2 bg-background border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+          className="w-full px-4 py-2 bg-background border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-portfolio-highlight focus:border-transparent transition-all"
         />
       </div>
       
@@ -102,7 +101,7 @@ const ContactForm = () => {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="inline-flex items-center justify-center w-full px-6 py-3 bg-accent text-white font-medium rounded-lg shadow-md hover:bg-accent/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent transition-colors disabled:opacity-70 hover:shadow-accent/30"
+          className="inline-flex items-center justify-center w-full px-6 py-3 bg-portfolio-highlight text-white font-medium rounded-lg shadow-md hover:bg-portfolio-highlight/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-portfolio-highlight transition-colors disabled:opacity-70 hover:shadow-portfolio-highlight/30"
         >
           {isSubmitting ? (
             <>Processing...</>

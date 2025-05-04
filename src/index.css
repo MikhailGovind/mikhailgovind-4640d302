@@ -17,7 +17,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
 
-    --primary: 210 100% 35%;
+    --primary: 222 89% 55%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 250 89% 65%;
@@ -34,14 +34,14 @@
 
     --border: 214 32% 91%;
     --input: 214 32% 91%;
-    --ring: 210 100% 35%;
+    --ring: 222 89% 55%;
 
     --radius: 0.75rem;
     
-    --portfolio-primary: 210 100% 35%;
+    --portfolio-primary: 222 89% 55%;
     --portfolio-secondary: 250 89% 65%;
     --portfolio-accent: 349 89% 65%;
-    --portfolio-highlight: 160 84% 42%;
+    --portfolio-highlight: 160 84% 55%;
     --portfolio-light: 210 40% 98%;
     --portfolio-dark: 222 47% 11%;
   }
@@ -56,7 +56,7 @@
     --popover: 220 10% 15%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 100% 50%;
+    --primary: 222 89% 55%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 250 89% 65%;
@@ -73,12 +73,12 @@
 
     --border: 217 10% 25%; /* Adjusted for better contrast */
     --input: 217 10% 25%;
-    --ring: 210 100% 50%;
+    --ring: 222 89% 55%;
 
-    --portfolio-primary: 210 100% 50%;
+    --portfolio-primary: 222 89% 55%;
     --portfolio-secondary: 250 89% 65%;
     --portfolio-accent: 349 89% 65%;
-    --portfolio-highlight: 160 84% 42%;
+    --portfolio-highlight: 160 84% 55%;
     --portfolio-light: 210 40% 98%;
     --portfolio-dark: 222 47% 11%;
   }
@@ -98,7 +98,7 @@
   .section-title {
     @apply text-3xl font-bold mb-6 text-primary relative 
            after:content-[''] after:absolute after:-bottom-2 after:left-0 
-           after:w-16 after:h-1 after:bg-portfolio-highlight;
+           after:w-16 after:h-1 after:bg-accent;
   }
 
   .page-container {
@@ -122,7 +122,7 @@
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-primary via-portfolio-highlight to-accent bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent;
   }
   
   .animated-bg {
@@ -131,7 +131,7 @@
   
   .animated-bg::before {
     content: '';
-    @apply absolute inset-0 bg-gradient-to-r from-primary/5 via-portfolio-highlight/5 to-accent/5 
+    @apply absolute inset-0 bg-gradient-to-r from-primary/5 via-secondary/5 to-accent/5 
            bg-[length:200%_200%] animate-gradient-x pointer-events-none -z-10;
   }
   
@@ -141,7 +141,7 @@
   }
   
   .feature-icon {
-    @apply bg-gradient-to-br from-portfolio-primary to-portfolio-highlight p-3 rounded-lg text-white;
+    @apply bg-gradient-to-br from-primary to-secondary p-3 rounded-lg text-white;
   }
 }
 
@@ -178,17 +178,6 @@
   }
 }
 
-@keyframes wave {
-  0% { transform: rotate(0.0deg); }
-  10% { transform: rotate(14deg); }
-  20% { transform: rotate(-8deg); }
-  30% { transform: rotate(14deg); }
-  40% { transform: rotate(-4deg); }
-  50% { transform: rotate(10.0deg); }
-  60% { transform: rotate(0.0deg); }
-  100% { transform: rotate(0.0deg); }
-}
-
 @layer utilities {
   .animate-gradient-x {
     animation: gradient-x 15s ease infinite;
@@ -200,9 +189,5 @@
   
   .animate-spin-slow {
     animation: spin-slow 12s linear infinite;
-  }
-  
-  .animate-wave {
-    animation: wave 2.5s infinite;
   }
 }

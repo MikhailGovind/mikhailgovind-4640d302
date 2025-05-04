@@ -288,7 +288,7 @@ With expertise in Unity and C#, I build immersive games and interactive systems 
                     </div>
                     <span>Based in Johannesburg, South Africa</span>
                   </div>
-                  <p>Available for remote opportunities worldwide</p>
+                  <p>Available for opportunities worldwide</p>
                 </div>
               </div>
             </div>

@@ -1,26 +1,19 @@
-
 import { useEffect } from "react";
 import { Github, Linkedin, Mail } from "lucide-react";
 import MainLayout from "@/components/layout/MainLayout";
 import SectionTitle from "@/components/ui/SectionTitle";
 import ContactForm from "@/components/ui/ContactForm";
-
 const Contact = () => {
   // Scroll to top on page load
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  return (
-    <MainLayout>
+  return <MainLayout>
       {/* Moving background mesh */}
       <div className="moving-mesh"></div>
       
       <div className="page-container">
-        <SectionTitle 
-          title="Contact Me" 
-          subtitle="For opportunities and collaborations" 
-        />
+        <SectionTitle title="Contact Me" subtitle="For opportunities and collaborations" />
         
         <div className="max-w-4xl mx-auto mt-12">
           <div className="glass-card p-8 md:p-12 shadow-lg">
@@ -35,10 +28,7 @@ const Contact = () => {
                     </div>
                     <div className="ml-4">
                       <h4 className="text-lg font-medium">Email</h4>
-                      <a 
-                        href="mailto:27miks12@gmail.com" 
-                        className="text-foreground hover:text-accent transition-colors"
-                      >
+                      <a href="mailto:27miks12@gmail.com" className="text-foreground hover:text-accent transition-colors">
                         27miks12@gmail.com
                       </a>
                     </div>
@@ -50,12 +40,7 @@ const Contact = () => {
                     </div>
                     <div className="ml-4">
                       <h4 className="text-lg font-medium">LinkedIn</h4>
-                      <a 
-                        href="https://linkedin.com/in/mikhail-govind" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-foreground hover:text-accent transition-colors"
-                      >
+                      <a href="https://linkedin.com/in/mikhail-govind" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-accent transition-colors">
                         linkedin.com/in/mikhail-govind
                       </a>
                     </div>
@@ -67,12 +52,7 @@ const Contact = () => {
                     </div>
                     <div className="ml-4">
                       <h4 className="text-lg font-medium">GitHub</h4>
-                      <a 
-                        href="https://github.com/MikhailGovind" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-foreground hover:text-accent transition-colors"
-                      >
+                      <a href="https://github.com/MikhailGovind" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-accent transition-colors">
                         github.com/MikhailGovind
                       </a>
                     </div>
@@ -80,9 +60,7 @@ const Contact = () => {
                 </div>
                 
                 <div className="mt-8 p-6 bg-card rounded-lg border border-border">
-                  <p>
-                    Based in Johannesburg, South Africa. Available for remote opportunities worldwide.
-                  </p>
+                  <p>Based in Johannesburg, South Africa. Available for opportunities worldwide.</p>
                 </div>
               </div>
               
@@ -94,8 +72,6 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </MainLayout>
-  );
+    </MainLayout>;
 };
-
 export default Contact;

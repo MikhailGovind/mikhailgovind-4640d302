@@ -99,7 +99,8 @@ const WireframeCube: React.FC = () => {
       });
       
       // Draw edges
-      ctx.strokeStyle = 'rgba(125, 125, 125, 0.3)';
+      const isDarkMode = document.documentElement.classList.contains('dark');
+      ctx.strokeStyle = isDarkMode ? 'rgba(150, 135, 245, 0.3)' : 'rgba(125, 125, 125, 0.3)';
       ctx.lineWidth = 1;
       
       edges.forEach(edge => {
@@ -110,11 +111,18 @@ const WireframeCube: React.FC = () => {
         ctx.stroke();
       });
       
-      // Draw vertices
-      ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
-      projectedVertices.forEach(([x, y]) => {
+      // Draw vertices with pink highlight for some nodes
+      projectedVertices.forEach(([x, y], index) => {
         ctx.beginPath();
         ctx.arc(x, y, 2, 0, Math.PI * 2);
+        
+        // Highlight certain vertices with pink color
+        if (index % 3 === 0) {
+          ctx.fillStyle = isDarkMode ? 'rgba(249, 128, 165, 0.7)' : 'rgba(249, 128, 165, 0.5)';
+        } else {
+          ctx.fillStyle = isDarkMode ? 'rgba(155, 135, 245, 0.5)' : 'rgba(255, 255, 255, 0.5)';
+        }
+        
         ctx.fill();
       });
       

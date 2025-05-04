@@ -43,10 +43,22 @@ export function ThemeProvider({
         : "light";
 
       root.classList.add(systemTheme);
+      
+      // Apply consistent card styling for dark mode
+      if (systemTheme === "dark") {
+        document.documentElement.style.setProperty('--card', '0 0% 15%');
+      }
       return;
     }
 
     root.classList.add(theme);
+    
+    // Apply consistent card styling for dark mode
+    if (theme === "dark") {
+      document.documentElement.style.setProperty('--card', '0 0% 15%');
+    } else {
+      document.documentElement.style.removeProperty('--card');
+    }
   }, [theme]);
 
   const value = {

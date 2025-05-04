@@ -1,6 +1,5 @@
-
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { ArrowRight, Code, Sparkles, Layers, Rocket, User, Briefcase, Mail } from "lucide-react";
 import { projects } from "@/data/projects";
 import MainLayout from "@/components/layout/MainLayout";
@@ -16,6 +15,18 @@ const Home = () => {
 
   // Featured projects (show only the first 3)
   const featuredProjects = projects.slice(0, 3);
+
+  // State to track the current video index
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+
+  // Cycle through project videos
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % featuredProjects.length);
+    }, 5000); // Change video every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [featuredProjects.length]);
 
   return (
     <MainLayout>
@@ -59,14 +70,15 @@ const Home = () => {
                 <div className="relative bg-card rounded-2xl p-6 shadow-xl">
                   {/* Project showcase video */}
                   <div className="rounded-lg shadow-md mb-4 aspect-video overflow-hidden">
-                    <video 
+                    <video
                       className="w-full h-full object-cover"
-                      autoPlay 
-                      muted 
-                      loop 
+                      autoPlay
+                      muted
+                      loop
                       playsInline
+                      key={featuredProjects[currentVideoIndex].videoSrc} // Ensure video reloads on change
                     >
-                      <source src="/placeholder-video.mp4" type="video/mp4" />
+                      <source src={featuredProjects[currentVideoIndex].videoSrc} type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
                   </div>
@@ -225,6 +237,7 @@ With expertise in Unity and C#, I build immersive games and interactive systems 
                   title={project.title}
                   description={project.description}
                   image={project.image}
+                  videoSrc={project.videoSrc}
                   tags={project.tags}
                   github={project.github}
                   slug={project.slug}

@@ -19,7 +19,7 @@ const Projects = () => {
       <div className="page-container">
         <SectionTitle 
           title="My Projects" 
-          subtitle="Explore my portfolio of game development projects built with Unity and C#" 
+          subtitle="Explore my portfolio of game development projects" 
         />
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">

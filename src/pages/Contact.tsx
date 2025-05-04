@@ -1,13 +1,16 @@
+
 import { useEffect } from "react";
 import { Github, Linkedin, Mail } from "lucide-react";
 import MainLayout from "@/components/layout/MainLayout";
 import SectionTitle from "@/components/ui/SectionTitle";
 import ContactForm from "@/components/ui/ContactForm";
+
 const Contact = () => {
   // Scroll to top on page load
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  
   return <MainLayout>
       {/* Moving background mesh */}
       <div className="moving-mesh"></div>
@@ -15,7 +18,7 @@ const Contact = () => {
       <div className="page-container">
         <SectionTitle title="Contact Me" subtitle="For opportunities and collaborations" />
         
-        <div className="max-w-4xl mx-auto mt-12">
+        <div className="max-w-5xl mx-auto mt-12">
           <div className="glass-card p-8 md:p-12 shadow-lg">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
               <div>
@@ -74,4 +77,5 @@ const Contact = () => {
       </div>
     </MainLayout>;
 };
+
 export default Contact;

@@ -1,7 +1,7 @@
 
 import { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, Download, FileText, Github, Video } from "lucide-react";
+import { ArrowLeft, Download, FileText, Github, FileText as DocumentIcon } from "lucide-react";
 import MainLayout from "@/components/layout/MainLayout";
 import { getProjectBySlug, projects } from "@/data/projects";
 import NotFound from "./NotFound";
@@ -61,31 +61,6 @@ const ProjectDetail = () => {
                 <h1 className="text-3xl md:text-4xl font-bold text-portfolio-primary">{project.title}</h1>
                 <p className="text-portfolio-secondary mt-1">{project.fullRoles || project.role} | {project.date}</p>
               </div>
-              
-              <div className="flex flex-wrap gap-3">
-                {project.github && (
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center px-4 py-2 bg-portfolio-primary text-white font-medium rounded-md hover:bg-portfolio-primary/90 transition-colors"
-                  >
-                    <Github size={18} className="mr-2" />
-                    View on GitHub
-                  </a>
-                )}
-                
-                {project.buildZip && (
-                  <a
-                    href={project.buildZip}
-                    download
-                    className="inline-flex items-center px-4 py-2 bg-portfolio-secondary text-white font-medium rounded-md hover:bg-portfolio-secondary/90 transition-colors"
-                  >
-                    <Download size={18} className="mr-2" />
-                    Download Build
-                  </a>
-                )}
-              </div>
             </div>
             
             <div className="mt-6">
@@ -101,29 +76,52 @@ const ProjectDetail = () => {
                 )}
                 
                 {/* Document Links */}
-                {(project.hasDesignDoc || project.hasTechDoc) && (
-                  <div className="flex flex-wrap gap-4 my-8">
-                    {project.hasDesignDoc && (
-                      <Link
-                        to={`/documents/design/${project.slug}`}
-                        className="inline-flex items-center px-4 py-2 bg-portfolio-accent text-white font-medium rounded-md hover:bg-portfolio-accent/90 transition-colors"
-                      >
-                        <FileText size={18} className="mr-2" />
-                        View Design Document
-                      </Link>
-                    )}
-                    
-                    {project.hasTechDoc && (
-                      <Link
-                        to={`/documents/technical/${project.slug}`}
-                        className="inline-flex items-center px-4 py-2 bg-portfolio-highlight text-white font-medium rounded-md hover:bg-portfolio-highlight/90 transition-colors"
-                      >
-                        <Video size={18} className="mr-2" />
-                        View Technical Document
-                      </Link>
-                    )}
-                  </div>
-                )}
+                <div className="flex flex-wrap gap-4 my-8">
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center px-4 py-2 bg-portfolio-primary text-white font-medium rounded-md hover:bg-portfolio-primary/90 transition-colors"
+                    >
+                      <Github size={18} className="mr-2" />
+                      View on GitHub
+                    </a>
+                  )}
+                  
+                  {project.buildZip && (
+                    <a
+                      href={project.buildZip}
+                      download
+                      className="inline-flex items-center px-4 py-2 bg-portfolio-secondary text-white font-medium rounded-md hover:bg-portfolio-secondary/90 transition-colors"
+                    >
+                      <Download size={18} className="mr-2" />
+                      Download Build
+                    </a>
+                  )}
+                  
+                  {project.hasDesignDoc && project.slug !== "djs-of-shaolin" && (
+                    <a
+                      href={`/documents/design/${project.slug}.pdf`}
+                      download
+                      className="inline-flex items-center px-4 py-2 bg-portfolio-accent text-white font-medium rounded-md hover:bg-portfolio-accent/90 transition-colors"
+                    >
+                      <FileText size={18} className="mr-2" />
+                      Design Document
+                    </a>
+                  )}
+                  
+                  {project.hasTechDoc && project.slug !== "djs-of-shaolin" && (
+                    <a
+                      href={`/documents/technical/${project.slug}.pdf`}
+                      download
+                      className="inline-flex items-center px-4 py-2 bg-portfolio-highlight text-white font-medium rounded-md hover:bg-portfolio-highlight/90 transition-colors"
+                    >
+                      <DocumentIcon size={18} className="mr-2" />
+                      Technical Document
+                    </a>
+                  )}
+                </div>
                 
                 {project.features && (
                   <div className="mt-8">

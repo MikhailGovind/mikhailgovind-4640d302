@@ -39,8 +39,8 @@ export const projects: Project[] = [
     tags: ["Unity", "C#", "Game Design", "Rhythm Game", "Pixel Art"],
     github: "https://github.com/MikhailGovind/TheDJsOFShaolin---Rhythm-Game",
     buildZip: "/builds/djs-of-shaolin.zip",
-    hasDesignDoc: true,
-    hasTechDoc: true,
+    hasDesignDoc: false,
+    hasTechDoc: false,
     features: [
       "Story-driven gameplay progression",
       "DJ-based rhythm mechanics",

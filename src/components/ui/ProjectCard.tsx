@@ -1,6 +1,6 @@
 
 import { cn } from "@/lib/utils";
-import { Download, FileText, Github, Video } from "lucide-react";
+import { Download, FileText, Github, FileText as DocumentIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 
 interface ProjectCardProps {
@@ -104,23 +104,25 @@ const ProjectCard = ({
           
           <div className="flex flex-wrap gap-3">
             {hasDesignDoc && (
-              <Link
-                to={`/documents/design/${slug}`}
+              <a
+                href={`/documents/design/${slug}.pdf`}
+                download
                 className="inline-flex items-center px-3 py-1.5 bg-card border border-border hover:border-portfolio-accent text-foreground hover:text-portfolio-accent text-sm rounded-md transition-colors"
               >
                 <FileText size={14} className="mr-1" />
-                View Design Document
-              </Link>
+                Design Document
+              </a>
             )}
             
             {hasTechDoc && (
-              <Link
-                to={`/documents/technical/${slug}`}
+              <a
+                href={`/documents/technical/${slug}.pdf`}
+                download
                 className="inline-flex items-center px-3 py-1.5 bg-card border border-border hover:border-portfolio-highlight text-foreground hover:text-portfolio-highlight text-sm rounded-md transition-colors"
               >
-                <Video size={14} className="mr-1" />
-                View Technical Document
-              </Link>
+                <DocumentIcon size={14} className="mr-1" />
+                Technical Document
+              </a>
             )}
           </div>
           

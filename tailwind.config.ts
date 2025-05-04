@@ -56,8 +56,8 @@ export default {
 				portfolio: {
 					primary: 'hsl(var(--portfolio-primary))',     // Blue
 					secondary: 'hsl(var(--portfolio-secondary))',  // Purple
-					accent: 'hsl(var(--portfolio-accent))',        // Pink
-					highlight: 'hsl(var(--portfolio-highlight))',  // Green
+					accent: 'hsl(var(--portfolio-accent))',        // Green
+					highlight: 'hsl(var(--portfolio-highlight))',  // Pink
 					light: 'hsl(var(--portfolio-light))',          // Light background
 					dark: 'hsl(var(--portfolio-dark))',            // Dark background
 				}
@@ -114,6 +114,10 @@ export default {
 					'60%': { transform: 'rotate(0.0deg)' },
 					'100%': { transform: 'rotate(0.0deg)' },
 				},
+				'gradientMove': {
+					'0%': { backgroundPosition: '0% 0%' },
+					'100%': { backgroundPosition: '100% 100%' },
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -127,6 +131,7 @@ export default {
 				'float': 'float 6s ease-in-out infinite',
 				'pulse-slow': 'pulse-slow 3s ease-in-out infinite',
 				'wave': 'wave 2.5s infinite',
+				'gradientMove': 'gradientMove 30s linear infinite',
 			},
 			fontFamily: {
 				sans: ['Inter', 'sans-serif'],

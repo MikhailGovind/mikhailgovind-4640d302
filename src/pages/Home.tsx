@@ -213,7 +213,7 @@ With expertise in Unity and C#, I build immersive games and interactive systems 
           
           <div className="mt-12 text-center">
             <Link to="/skills" className="inline-flex items-center px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary/90 transition-all shadow-lg hover:shadow-primary/30">
-              View All Skills
+              View All My Skills
               <ArrowRight size={18} className="ml-2" />
             </Link>
           </div>
@@ -223,7 +223,7 @@ With expertise in Unity and C#, I build immersive games and interactive systems 
       {/* Featured Projects Section */}
       <section className="py-16 md:py-24 bg-muted/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionTitle title="Featured Projects" subtitle="Check out some of my recent game development work" align="center" />
+          <SectionTitle title="Featured Projects" subtitle="Check out some of my recent work" align="center" />
           
           <div className="relative">
             {/* Decorative animated elements */}

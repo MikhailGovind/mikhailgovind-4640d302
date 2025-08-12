@@ -188,7 +188,7 @@ const Skills = () => {
       <div className="page-container">
         <SectionTitle 
           title="My Skills" 
-          subtitle="A comprehensive overview of my technical and soft skills in game development" 
+          subtitle="A comprehensive overview of my technical and soft skills" 
         />
         
         <div className="grid grid-cols-1 gap-8 mt-12">
